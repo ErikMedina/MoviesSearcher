@@ -1,4 +1,4 @@
-package com.erikmedina.test
+package com.erikmedina.article
 
 import org.junit.Test
 

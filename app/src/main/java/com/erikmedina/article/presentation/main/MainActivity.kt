@@ -1,7 +1,8 @@
-package com.erikmedina.test
+package com.erikmedina.article.presentation.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.erikmedina.article.R
 
 class MainActivity : AppCompatActivity() {
 
