@@ -12,11 +12,11 @@ interface MainContract {
 
     interface View : BaseView<Presenter> {
 
-        fun setItems(cityViews: List<ItemView>)
+        fun setItemViews(itemViews: List<ItemView>)
     }
 
     interface Presenter : BasePresenter<View> {
 
-        fun getItems()
+        fun getContentList()
     }
 }

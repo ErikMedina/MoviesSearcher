@@ -1,6 +1,5 @@
 package com.erikmedina.article.data.local.model
 
-import com.erikmedina.article.util.Constant
 import java.io.Serializable
 
 /**
@@ -10,7 +9,8 @@ import java.io.Serializable
  */
 data class ItemView(
         val id: Int,
-        val title: String = Constant.UNKNOWN,
-        val subtitle: String = Constant.UNKNOWN,
-        val date: String = Constant.UNKNOWN
+        val title: String,
+        val subtitle: String,
+        val body: String,
+        val date: String
 ) : Serializable
