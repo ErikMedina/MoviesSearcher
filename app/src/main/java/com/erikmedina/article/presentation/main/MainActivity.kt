@@ -36,10 +36,8 @@ class MainActivity : BaseActivity(), MainContract.View {
     private fun initializeRecycler() {
         adapter = ItemAdapter(object : ItemAdapter.OnItemClickListener {
             override fun onItemClick(itemView: ItemView) {
-                Log.i(TAG, "[onItemClick] cityView selected: ${itemView.title}")
-//                val intent = Intent(context, CityDetailActivity::class.java)
-//                intent.putExtra(Constant.EXTRA_CITY, itemView)
-//                startActivity(intent)
+                Log.i(TAG, "[onItemClick] item selected: ${itemView.title}")
+//                presenter.onItemSelected(itemView.id)
             }
         })
         recycler.adapter = adapter
@@ -72,6 +70,10 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun showError(error: String) {
         val rootView = window.decorView.findViewById<View>(android.R.id.content)
         Snackbar.make(rootView, error, Snackbar.LENGTH_SHORT).show()
+    }
+
+    override fun showLoading(show: Boolean) {
+        progressBar.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     companion object {

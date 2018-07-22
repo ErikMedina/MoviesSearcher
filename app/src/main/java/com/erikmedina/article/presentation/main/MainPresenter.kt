@@ -22,9 +22,11 @@ constructor() : MainContract.Presenter {
     }
 
     override fun getContentList() {
+        view?.showLoading(true)
         interactor.run(object : GetContentListInteractor.Callback {
             override fun onSuccess(itemViews: List<ItemView>) {
                 view?.setItemViews(itemViews)
+                view?.showLoading(false)
             }
 
             override fun onError(throwable: Throwable) {
@@ -32,6 +34,7 @@ constructor() : MainContract.Presenter {
                 //the user. Now we show the same message.
                 // Also if we inject a context, we can retrieve string resources and avoid text hardcoding
                 view?.showError("There was a problem. Try later")
+                view?.showLoading(false)
             }
         })
     }
