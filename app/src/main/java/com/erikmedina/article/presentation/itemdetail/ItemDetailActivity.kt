@@ -2,26 +2,26 @@ package com.erikmedina.article.presentation.itemdetail
 
 import android.os.Bundle
 import com.erikmedina.article.R
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 import com.erikmedina.article.presentation.BaseActivity
 import com.erikmedina.article.util.Constant
 import kotlinx.android.synthetic.main.activity_item_detail.*
 
 class ItemDetailActivity : BaseActivity() {
 
-    private lateinit var itemView: ItemView
+    private lateinit var item: Item
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        itemView = intent.getSerializableExtra(Constant.EXTRA_ITEM) as ItemView
+        item = intent.getSerializableExtra(Constant.EXTRA_ITEM) as Item
         initializeItemDetail()
     }
 
     private fun initializeItemDetail() {
-        tvTitle.text = itemView.title
-        tvSubtitle.text = itemView.subtitle
-        tvBody.text = itemView.body
-        tvDate.text = itemView.date
+        tvTitle.text = item.title
+        tvSubtitle.text = item.subtitle
+        tvBody.text = item.body
+        tvDate.text = item.date
     }
 
     override fun getLayoutId() = R.layout.activity_item_detail

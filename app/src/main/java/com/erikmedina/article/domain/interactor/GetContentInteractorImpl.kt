@@ -1,6 +1,6 @@
 package com.erikmedina.article.domain.interactor
 
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 import com.erikmedina.article.domain.repository.Repository
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
@@ -21,8 +21,8 @@ constructor(private val repository: Repository) : GetContentInteractor {
 
     override fun execute() {
         launch(UI) {
-            repository.getContent(id, object : Repository.Callback<ItemView> {
-                override fun onSuccess(item: ItemView) {
+            repository.getContent(id, object : Repository.Callback<Item> {
+                override fun onSuccess(item: Item) {
                     callback.onSuccess(item)
                 }
 

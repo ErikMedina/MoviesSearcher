@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.erikmedina.article.R
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 
 class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClick(itemView: ItemView)
+        fun onItemClick(item: Item)
     }
 
-    private var itemViews = emptyList<ItemView>()
+    private var itemViews = emptyList<Item>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
@@ -30,8 +30,8 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         holder.bind(itemViews[position], listener)
     }
 
-    fun setItemViews(itemViews: List<ItemView>) {
-        this.itemViews = itemViews
+    fun setItemViews(items: List<Item>) {
+        this.itemViews = items
         notifyDataSetChanged()
     }
 
@@ -41,7 +41,7 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         var subtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
         var date: TextView = itemView.findViewById(R.id.tvDate)
 
-        fun bind(item: ItemView, listener: OnItemClickListener) {
+        fun bind(item: Item, listener: OnItemClickListener) {
             itemView.setOnClickListener {
                 listener.onItemClick(item)
             }

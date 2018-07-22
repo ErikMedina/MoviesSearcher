@@ -1,16 +1,16 @@
 package com.erikmedina.article.util
 
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 import com.erikmedina.article.data.remote.model.ContentListResponse
 import com.erikmedina.article.data.remote.model.ContentResponse
 
 object Mapper {
 
-    fun map(contentListResponse: ContentListResponse): List<ItemView> {
+    fun mapItems(contentListResponse: ContentListResponse): List<Item> {
         val items = contentListResponse.items
-        val itemViews = ArrayList<ItemView>()
+        val itemViews = ArrayList<Item>()
         for (item in items) {
-            val itemView = ItemView(
+            val itemView = Item(
                     id = item.id,
                     title = item.title,
                     subtitle = item.subtitle,
@@ -22,9 +22,9 @@ object Mapper {
         return itemViews
     }
 
-    fun mapItem(contentResponse: ContentResponse): ItemView {
+    fun mapItem(contentResponse: ContentResponse): Item {
         val item = contentResponse.item
-        return ItemView(
+        return Item(
                 id = item.id,
                 title = item.title,
                 subtitle = item.subtitle,
