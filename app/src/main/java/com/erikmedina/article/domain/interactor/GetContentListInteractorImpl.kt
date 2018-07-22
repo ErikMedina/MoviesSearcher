@@ -14,6 +14,7 @@ constructor(private val repository: Repository) : GetContentListInteractor {
 
     override fun run(callback: GetContentListInteractor.Callback) {
         this.callback = callback
+        execute()
     }
 
     override fun execute() {

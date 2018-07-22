@@ -17,8 +17,6 @@ interface MainContract {
 
     interface Presenter : BasePresenter<View> {
 
-        fun getItems()
-
         fun getContentList()
     }
 }

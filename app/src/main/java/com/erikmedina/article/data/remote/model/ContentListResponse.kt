@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
-class ContentList {
+class ContentListResponse {
 
     @SerializedName("items")
     @Expose
