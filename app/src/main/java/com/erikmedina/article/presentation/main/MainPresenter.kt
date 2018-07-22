@@ -1,6 +1,6 @@
 package com.erikmedina.article.presentation.main
 
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 import com.erikmedina.article.domain.interactor.GetContentInteractor
 import com.erikmedina.article.domain.interactor.GetContentListInteractor
 import javax.inject.Inject
@@ -27,8 +27,8 @@ constructor() : MainContract.Presenter {
     override fun getContentList() {
         view?.showLoading(true)
         contentListInteractor.run(object : GetContentListInteractor.Callback {
-            override fun onSuccess(itemViews: List<ItemView>) {
-                view?.setItemViews(itemViews)
+            override fun onSuccess(items: List<Item>) {
+                view?.setItemViews(items)
                 view?.showLoading(false)
             }
 
@@ -45,9 +45,9 @@ constructor() : MainContract.Presenter {
     override fun onItemSelected(id: Int) {
         view?.showLoading(true)
         contentInteractor.run(id, object : GetContentInteractor.Callback {
-            override fun onSuccess(itemView: ItemView) {
+            override fun onSuccess(item: Item) {
                 view?.showLoading(false)
-                view?.startItemDetailActivity(itemView)
+                view?.startItemDetailActivity(item)
             }
 
             override fun onError(throwable: Throwable) {

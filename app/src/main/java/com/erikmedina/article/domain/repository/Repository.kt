@@ -1,6 +1,6 @@
 package com.erikmedina.article.domain.repository
 
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 
 interface Repository {
 
@@ -11,7 +11,7 @@ interface Repository {
         fun onError(throwable: Throwable)
     }
 
-    fun getContentList(callback: Callback<List<ItemView>>)
+    fun getContentList(callback: Callback<List<Item>>)
 
-    fun getContent(id: Int, callback: Callback<ItemView>)
+    fun getContent(id: Int, callback: Callback<Item>)
 }

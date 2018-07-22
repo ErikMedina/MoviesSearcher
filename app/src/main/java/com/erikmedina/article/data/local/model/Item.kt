@@ -7,7 +7,7 @@ import java.io.Serializable
  * Kotlin's Data Classes (https://kotlinlang.org/docs/reference/data-classes.html) are useful
  * for holding data.
  */
-data class ItemView(
+data class Item(
         val id: Int,
         val title: String,
         val subtitle: String,

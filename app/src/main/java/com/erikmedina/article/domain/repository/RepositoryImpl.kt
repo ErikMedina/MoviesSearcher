@@ -1,7 +1,7 @@
 package com.erikmedina.article.domain.repository
 
 import android.util.Log
-import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.data.local.model.Item
 import com.erikmedina.article.data.remote.model.ContentListResponse
 import com.erikmedina.article.data.remote.model.ContentResponse
 import com.erikmedina.article.data.remote.service.ApiRest
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @Singleton
 class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
 
-    override fun getContentList(callback: Repository.Callback<List<ItemView>>) {
+    override fun getContentList(callback: Repository.Callback<List<Item>>) {
         Log.i(TAG, "[getContentList]")
         val call = apiRest.getContentList()
         call.enqueue(object : Callback<ContentListResponse> {
@@ -33,7 +33,7 @@ class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
         })
     }
 
-    override fun getContent(id: Int, callback: Repository.Callback<ItemView>) {
+    override fun getContent(id: Int, callback: Repository.Callback<Item>) {
         Log.i(TAG, "[getContent]")
         val call = apiRest.getContent(id)
         call.enqueue(object : Callback<ContentResponse> {
