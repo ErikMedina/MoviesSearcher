@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Articles</string>
-    <string name="label.itemView.colon">Title:</string>
+    <string name="label.title.colon">Title:</string>
     <string name="label.subtitle.colon">Subtitle:</string>
     <string name="label.date.colon">Date:</string>
+    <string name="label.description.colon">Description:</string>
 </resources>

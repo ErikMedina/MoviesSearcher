@@ -6,22 +6,24 @@ import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import javax.inject.Inject
 
-class GetContentListInteractorImpl
+class GetContentInteractorImpl
 @Inject
-constructor(private val repository: Repository) : GetContentListInteractor {
+constructor(private val repository: Repository) : GetContentInteractor {
 
-    private lateinit var callback: GetContentListInteractor.Callback
+    private lateinit var callback: GetContentInteractor.Callback
+    private var id = -1
 
-    override fun run(callback: GetContentListInteractor.Callback) {
+    override fun run(id: Int, callback: GetContentInteractor.Callback) {
         this.callback = callback
+        this.id = id
         execute()
     }
 
     override fun execute() {
         launch(UI) {
-            repository.getContentList(object : Repository.Callback<List<ItemView>> {
-                override fun onSuccess(itemViews: List<ItemView>) {
-                    callback.onSuccess(itemViews)
+            repository.getContent(id, object : Repository.Callback<ItemView> {
+                override fun onSuccess(item: ItemView) {
+                    callback.onSuccess(item)
                 }
 
                 override fun onError(throwable: Throwable) {

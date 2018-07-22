@@ -38,8 +38,8 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var title: TextView = itemView.findViewById(R.id.title)
-        var subtitle: TextView = itemView.findViewById(R.id.subtitle)
-        var date: TextView = itemView.findViewById(R.id.date)
+        var subtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
+        var date: TextView = itemView.findViewById(R.id.tvDate)
 
         fun bind(item: ItemView, listener: OnItemClickListener) {
             itemView.setOnClickListener {

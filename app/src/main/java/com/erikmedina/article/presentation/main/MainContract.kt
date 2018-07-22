@@ -13,10 +13,14 @@ interface MainContract {
     interface View : BaseView<Presenter> {
 
         fun setItemViews(itemViews: List<ItemView>)
+
+        fun startItemDetailActivity(itemView: ItemView)
     }
 
     interface Presenter : BasePresenter<View> {
 
         fun getContentList()
+
+        fun onItemSelected(id: Int)
     }
 }

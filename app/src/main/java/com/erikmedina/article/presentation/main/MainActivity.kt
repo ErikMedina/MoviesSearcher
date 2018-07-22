@@ -1,6 +1,7 @@
 package com.erikmedina.article.presentation.main
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
@@ -12,12 +13,13 @@ import com.erikmedina.article.data.local.model.ItemView
 import com.erikmedina.article.di.component.DaggerMainComponent
 import com.erikmedina.article.di.module.MainModule
 import com.erikmedina.article.presentation.BaseActivity
+import com.erikmedina.article.presentation.itemdetail.ItemDetailActivity
 import com.erikmedina.article.presentation.main.adapter.ItemAdapter
+import com.erikmedina.article.util.Constant
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
-
     @Inject
     lateinit var presenter: MainPresenter
 
@@ -36,10 +38,8 @@ class MainActivity : BaseActivity(), MainContract.View {
     private fun initializeRecycler() {
         adapter = ItemAdapter(object : ItemAdapter.OnItemClickListener {
             override fun onItemClick(itemView: ItemView) {
-                Log.i(TAG, "[onItemClick] cityView selected: ${itemView.title}")
-//                val intent = Intent(context, CityDetailActivity::class.java)
-//                intent.putExtra(Constant.EXTRA_CITY, itemView)
-//                startActivity(intent)
+                Log.i(TAG, "[onItemClick] item selected: ${itemView.title}")
+                presenter.onItemSelected(itemView.id)
             }
         })
         recycler.adapter = adapter
@@ -69,9 +69,19 @@ class MainActivity : BaseActivity(), MainContract.View {
         adapter.setItemViews(itemViews)
     }
 
+    override fun startItemDetailActivity(itemView: ItemView) {
+        val intent = Intent(context, ItemDetailActivity::class.java)
+        intent.putExtra(Constant.EXTRA_ITEM, itemView)
+        startActivity(intent)
+    }
+
     override fun showError(error: String) {
         val rootView = window.decorView.findViewById<View>(android.R.id.content)
         Snackbar.make(rootView, error, Snackbar.LENGTH_SHORT).show()
+    }
+
+    override fun showLoading(show: Boolean) {
+        progressBar.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     companion object {
