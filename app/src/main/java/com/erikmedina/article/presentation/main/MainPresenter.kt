@@ -10,6 +10,10 @@ constructor() : MainContract.Presenter {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    override fun getContentList() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun takeView(view: MainContract.View) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
