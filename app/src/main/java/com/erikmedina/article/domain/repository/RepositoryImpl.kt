@@ -3,6 +3,7 @@ package com.erikmedina.article.domain.repository
 import android.util.Log
 import com.erikmedina.article.data.local.model.ItemView
 import com.erikmedina.article.data.remote.model.ContentListResponse
+import com.erikmedina.article.data.remote.model.ContentResponse
 import com.erikmedina.article.data.remote.service.ApiRest
 import com.erikmedina.article.util.Mapper
 import retrofit2.Call
@@ -27,6 +28,22 @@ class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
             }
 
             override fun onFailure(call: Call<ContentListResponse>?, t: Throwable) {
+                callback.onError(t)
+            }
+        })
+    }
+
+    override fun getContent(id: Int, callback: Repository.Callback<ItemView>) {
+        Log.i(TAG, "[getContent]")
+        val call = apiRest.getContent(id)
+        call.enqueue(object : Callback<ContentResponse> {
+            override fun onResponse(call: Call<ContentResponse>?, response: Response<ContentResponse>) {
+                if (response.isSuccessful) {
+                    callback.onSuccess(Mapper.mapItem(response.body()))
+                }
+            }
+
+            override fun onFailure(call: Call<ContentResponse>?, t: Throwable) {
                 callback.onError(t)
             }
         })

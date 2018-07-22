@@ -1,5 +1,7 @@
 package com.erikmedina.article.di.module
 
+import com.erikmedina.article.domain.interactor.GetContentInteractor
+import com.erikmedina.article.domain.interactor.GetContentInteractorImpl
 import com.erikmedina.article.domain.interactor.GetContentListInteractor
 import com.erikmedina.article.domain.interactor.GetContentListInteractorImpl
 import com.erikmedina.article.domain.repository.Repository
@@ -17,8 +19,13 @@ class MainModule {
     }
 
     @Provides
-    fun provideGetContentList(
+    fun provideGetContentListInteractor(
             repository: Repository): GetContentListInteractor {
         return GetContentListInteractorImpl(repository)
+    }
+
+    @Provides
+    fun provideGetContentInteractor(repository: Repository): GetContentInteractor {
+        return GetContentInteractorImpl(repository)
     }
 }

@@ -1,6 +1,7 @@
 package com.erikmedina.article.presentation.main
 
 import com.erikmedina.article.data.local.model.ItemView
+import com.erikmedina.article.domain.interactor.GetContentInteractor
 import com.erikmedina.article.domain.interactor.GetContentListInteractor
 import javax.inject.Inject
 
@@ -10,6 +11,8 @@ constructor() : MainContract.Presenter {
 
     @Inject
     lateinit var contentListInteractor: GetContentListInteractor
+    @Inject
+    lateinit var contentInteractor: GetContentInteractor
 
     private var view: MainContract.View? = null
 
@@ -40,7 +43,19 @@ constructor() : MainContract.Presenter {
     }
 
     override fun onItemSelected(id: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view?.showLoading(true)
+        contentInteractor.run(id, object : GetContentInteractor.Callback {
+            override fun onSuccess(itemView: ItemView) {
+                view?.showLoading(false)
+                view?.startItemDetailActivity(itemView)
+            }
+
+            override fun onError(throwable: Throwable) {
+                view?.showError("There was a problem. Try later")
+                view?.showLoading(false)
+            }
+
+        })
     }
 
     companion object {

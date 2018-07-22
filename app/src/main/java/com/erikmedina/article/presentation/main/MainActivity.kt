@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
-
     @Inject
     lateinit var presenter: MainPresenter
 
@@ -37,7 +36,7 @@ class MainActivity : BaseActivity(), MainContract.View {
         adapter = ItemAdapter(object : ItemAdapter.OnItemClickListener {
             override fun onItemClick(itemView: ItemView) {
                 Log.i(TAG, "[onItemClick] item selected: ${itemView.title}")
-//                presenter.onItemSelected(itemView.id)
+                presenter.onItemSelected(itemView.id)
             }
         })
         recycler.adapter = adapter
@@ -65,6 +64,9 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     override fun setItemViews(itemViews: List<ItemView>) {
         adapter.setItemViews(itemViews)
+    }
+
+    override fun startItemDetailActivity(itemView: ItemView) {
     }
 
     override fun showError(error: String) {

@@ -4,9 +4,9 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
-class Content {
+class ContentResponse {
 
     @SerializedName("item")
     @Expose
-    var item: Item? = null
+    var item: Item = Item()
 }

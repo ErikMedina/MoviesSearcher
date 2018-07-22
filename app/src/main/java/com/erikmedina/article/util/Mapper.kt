@@ -2,6 +2,7 @@ package com.erikmedina.article.util
 
 import com.erikmedina.article.data.local.model.ItemView
 import com.erikmedina.article.data.remote.model.ContentListResponse
+import com.erikmedina.article.data.remote.model.ContentResponse
 
 object Mapper {
 
@@ -19,5 +20,16 @@ object Mapper {
             itemViews.add(itemView)
         }
         return itemViews
+    }
+
+    fun mapItem(contentResponse: ContentResponse): ItemView {
+        val item = contentResponse.item
+        return ItemView(
+                id = item.id,
+                title = item.title,
+                subtitle = item.subtitle,
+                body = item.body,
+                date = item.date
+        )
     }
 }
