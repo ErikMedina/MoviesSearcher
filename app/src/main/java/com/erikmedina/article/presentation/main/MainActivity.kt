@@ -1,6 +1,7 @@
 package com.erikmedina.article.presentation.main
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
@@ -12,7 +13,9 @@ import com.erikmedina.article.data.local.model.ItemView
 import com.erikmedina.article.di.component.DaggerMainComponent
 import com.erikmedina.article.di.module.MainModule
 import com.erikmedina.article.presentation.BaseActivity
+import com.erikmedina.article.presentation.itemdetail.ItemDetailActivity
 import com.erikmedina.article.presentation.main.adapter.ItemAdapter
+import com.erikmedina.article.util.Constant
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -67,6 +70,9 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun startItemDetailActivity(itemView: ItemView) {
+        val intent = Intent(context, ItemDetailActivity::class.java)
+        intent.putExtra(Constant.EXTRA_ITEM, itemView)
+        startActivity(intent)
     }
 
     override fun showError(error: String) {

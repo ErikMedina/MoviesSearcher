@@ -14,6 +14,4 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract fun getLayoutId(): Int
 
     protected abstract fun initializeDependencyInjector()
-
-    protected abstract fun showLoading(show: Boolean)
 }

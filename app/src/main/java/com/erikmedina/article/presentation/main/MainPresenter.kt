@@ -54,7 +54,6 @@ constructor() : MainContract.Presenter {
                 view?.showError("There was a problem. Try later")
                 view?.showLoading(false)
             }
-
         })
     }
 
