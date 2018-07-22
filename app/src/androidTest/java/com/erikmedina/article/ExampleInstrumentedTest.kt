@@ -1,4 +1,4 @@
-package com.erikmedina.test
+package com.erikmedina.article
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
