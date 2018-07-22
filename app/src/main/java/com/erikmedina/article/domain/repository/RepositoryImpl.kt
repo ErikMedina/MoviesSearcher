@@ -1,6 +1,7 @@
 package com.erikmedina.article.domain.repository
 
 import android.util.Log
+import com.erikmedina.article.data.local.model.ItemView
 import com.erikmedina.article.data.remote.model.ContentListResponse
 import com.erikmedina.article.data.remote.service.ApiRest
 import com.erikmedina.article.util.Mapper
@@ -15,7 +16,7 @@ import javax.inject.Singleton
 @Singleton
 class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
 
-    override fun getContentList(callback: Repository.Callback) {
+    override fun getContentList(callback: Repository.Callback<List<ItemView>>) {
         Log.i(TAG, "[getContentList]")
         val call = apiRest.getContentList()
         call.enqueue(object : Callback<ContentListResponse> {

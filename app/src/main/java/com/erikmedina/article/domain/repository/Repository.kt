@@ -4,12 +4,12 @@ import com.erikmedina.article.data.local.model.ItemView
 
 interface Repository {
 
-    interface Callback {
+    interface Callback<T> {
 
-        fun onSuccess(itemViews: List<ItemView>)
+        fun onSuccess(generic: T)
 
         fun onError(throwable: Throwable)
     }
 
-    fun getContentList(callback: Repository.Callback)
+    fun getContentList(callback: Callback<List<ItemView>>)
 }

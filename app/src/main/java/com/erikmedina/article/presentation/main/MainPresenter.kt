@@ -9,7 +9,7 @@ class MainPresenter
 constructor() : MainContract.Presenter {
 
     @Inject
-    lateinit var interactor: GetContentListInteractor
+    lateinit var contentListInteractor: GetContentListInteractor
 
     private var view: MainContract.View? = null
 
@@ -23,7 +23,7 @@ constructor() : MainContract.Presenter {
 
     override fun getContentList() {
         view?.showLoading(true)
-        interactor.run(object : GetContentListInteractor.Callback {
+        contentListInteractor.run(object : GetContentListInteractor.Callback {
             override fun onSuccess(itemViews: List<ItemView>) {
                 view?.setItemViews(itemViews)
                 view?.showLoading(false)
@@ -37,6 +37,10 @@ constructor() : MainContract.Presenter {
                 view?.showLoading(false)
             }
         })
+    }
+
+    override fun onItemSelected(id: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     companion object {

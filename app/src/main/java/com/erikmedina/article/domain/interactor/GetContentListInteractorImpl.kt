@@ -19,7 +19,7 @@ constructor(private val repository: Repository) : GetContentListInteractor {
 
     override fun execute() {
         launch(UI) {
-            repository.getContentList(object : Repository.Callback {
+            repository.getContentList(object : Repository.Callback<List<ItemView>> {
                 override fun onSuccess(itemViews: List<ItemView>) {
                     callback.onSuccess(itemViews)
                 }
