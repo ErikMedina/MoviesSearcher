@@ -6,7 +6,7 @@ import com.erikmedina.article.data.remote.model.ContentResponse
 
 object Mapper {
 
-    fun map(contentListResponse: ContentListResponse): List<Item> {
+    fun mapItems(contentListResponse: ContentListResponse): List<Item> {
         val items = contentListResponse.items
         val itemViews = ArrayList<Item>()
         for (item in items) {

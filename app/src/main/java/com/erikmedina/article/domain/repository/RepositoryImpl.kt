@@ -23,7 +23,7 @@ class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
         call.enqueue(object : Callback<ContentListResponse> {
             override fun onResponse(call: Call<ContentListResponse>?, response: Response<ContentListResponse>) {
                 if (response.isSuccessful) {
-                    callback.onSuccess(Mapper.map(response.body()))
+                    callback.onSuccess(Mapper.mapItems(response.body()))
                 }
             }
 

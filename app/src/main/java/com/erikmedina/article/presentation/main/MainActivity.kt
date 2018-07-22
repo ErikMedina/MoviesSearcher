@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
+
     @Inject
     lateinit var presenter: MainPresenter
 
