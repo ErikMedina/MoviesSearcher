@@ -1,6 +1,6 @@
 package com.erikmedina.article.data.remote.service
 
-import com.erikmedina.article.data.remote.model.ContentResponse
+import com.erikmedina.article.data.remote.model.Search
 import com.erikmedina.article.data.remote.model.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -20,5 +20,5 @@ interface ApiRest {
     fun getContentList(@Query(SEARCH) title: String): Call<SearchResponse>
 
     @GET("./?apikey=4dfc3ce9")
-    fun getContent(@Query(MOVIE_ID) id: String): Call<ContentResponse>
+    fun getContent(@Query(MOVIE_ID) id: String): Call<Search>
 }

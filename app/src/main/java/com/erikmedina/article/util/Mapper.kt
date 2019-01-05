@@ -1,7 +1,7 @@
 package com.erikmedina.article.util
 
 import com.erikmedina.article.data.local.model.Item
-import com.erikmedina.article.data.remote.model.ContentResponse
+import com.erikmedina.article.data.remote.model.Search
 import com.erikmedina.article.data.remote.model.SearchResponse
 
 object Mapper {
@@ -24,16 +24,15 @@ object Mapper {
         return itemViews
     }
 
-    fun mapItem(contentResponse: ContentResponse): Item {
-        val item = contentResponse.search
+    fun mapItem(search: Search): Item {
         return Item(
-                id = item.imdbID,
-                title = item.title,
-                poster = item.poster,
-                actors = Constant.UNKNOWN,
-                director = Constant.UNKNOWN,
-                years = item.year,
-        plot = item.plot
+                id = search.imdbID,
+                title = search.title,
+                poster = search.poster,
+                actors = search.actors,
+                director = search.director,
+                years = search.year,
+                plot = search.plot
         )
     }
 }

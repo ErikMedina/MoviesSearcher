@@ -2,7 +2,7 @@ package com.erikmedina.article.domain.repository
 
 import android.util.Log
 import com.erikmedina.article.data.local.model.Item
-import com.erikmedina.article.data.remote.model.ContentResponse
+import com.erikmedina.article.data.remote.model.Search
 import com.erikmedina.article.data.remote.model.SearchResponse
 import com.erikmedina.article.data.remote.service.ApiRest
 import com.erikmedina.article.util.Mapper
@@ -36,14 +36,14 @@ class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
     override fun getContent(id: String, callback: Repository.Callback<Item>) {
         Log.i(TAG, "[getContent]")
         val call = apiRest.getContent(id)
-        call.enqueue(object : Callback<ContentResponse> {
-            override fun onResponse(call: Call<ContentResponse>?, response: Response<ContentResponse>) {
+        call.enqueue(object : Callback<Search> {
+            override fun onResponse(call: Call<Search>?, response: Response<Search>) {
                 if (response.isSuccessful) {
                     callback.onSuccess(Mapper.mapItem(response.body()))
                 }
             }
 
-            override fun onFailure(call: Call<ContentResponse>?, t: Throwable) {
+            override fun onFailure(call: Call<Search>?, t: Throwable) {
                 callback.onError(t)
             }
         })
