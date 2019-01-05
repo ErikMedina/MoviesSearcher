@@ -21,6 +21,6 @@ interface MainContract {
 
         fun getContentList(title: String)
 
-        fun onItemSelected(id: Int)
+        fun onItemSelected(id: String)
     }
 }

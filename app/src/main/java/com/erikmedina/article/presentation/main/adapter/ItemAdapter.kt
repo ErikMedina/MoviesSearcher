@@ -25,8 +25,8 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.text = itemViews[position].title
-        holder.subtitle.text = itemViews[position].subtitle
-        holder.date.text = itemViews[position].date
+        holder.poster.text = itemViews[position].poster
+        holder.year.text = itemViews[position].years
         holder.bind(itemViews[position], listener)
     }
 
@@ -38,8 +38,8 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var title: TextView = itemView.findViewById(R.id.title)
-        var subtitle: TextView = itemView.findViewById(R.id.tvSubtitle)
-        var date: TextView = itemView.findViewById(R.id.tvDate)
+        var poster: TextView = itemView.findViewById(R.id.tvPoster)
+        var year: TextView = itemView.findViewById(R.id.tvYear)
 
         fun bind(item: Item, listener: OnItemClickListener) {
             itemView.setOnClickListener {

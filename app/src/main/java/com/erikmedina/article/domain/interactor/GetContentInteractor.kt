@@ -12,5 +12,5 @@ interface GetContentInteractor : Interactor {
         fun onError(throwable: Throwable)
     }
 
-    fun run(id: Int, callback: Callback)
+    fun run(id: String, callback: Callback)
 }

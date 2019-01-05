@@ -1,21 +1,23 @@
 package com.erikmedina.article.util
 
 import com.erikmedina.article.data.local.model.Item
-import com.erikmedina.article.data.remote.model.SearchResponse
 import com.erikmedina.article.data.remote.model.ContentResponse
+import com.erikmedina.article.data.remote.model.SearchResponse
 
 object Mapper {
 
     fun mapItems(searchResponse: SearchResponse): List<Item> {
-        val items = searchResponse.searches
+        val movies = searchResponse.movies
         val itemViews = ArrayList<Item>()
-        for (item in items) {
+        for (movie in movies) {
             val itemView = Item(
-                    id = item.id,
-                    title = item.title,
-                    subtitle = item.subtitle,
-                    body = item.body,
-                    date = item.date
+                    id = movie.imdbID,
+                    title = movie.title,
+                    actors = Constant.UNKNOWN,
+                    director = Constant.UNKNOWN,
+                    poster = movie.poster,
+                    years = movie.year,
+                    plot = Constant.UNKNOWN
             )
             itemViews.add(itemView)
         }
@@ -25,11 +27,13 @@ object Mapper {
     fun mapItem(contentResponse: ContentResponse): Item {
         val item = contentResponse.search
         return Item(
-                id = item.id,
+                id = item.imdbID,
                 title = item.title,
-                subtitle = item.subtitle,
-                body = item.body,
-                date = item.date
+                poster = item.poster,
+                actors = Constant.UNKNOWN,
+                director = Constant.UNKNOWN,
+                years = item.year,
+        plot = item.plot
         )
     }
 }

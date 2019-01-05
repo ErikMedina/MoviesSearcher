@@ -9,7 +9,7 @@ class SearchResponse {
 
     @SerializedName("Search")
     @Expose
-    var search: List<Search> = emptyList()
+    var movies: List<Search> = emptyList()
     @SerializedName("totalResults")
     @Expose
     var totalResults: String = Constant.UNKNOWN

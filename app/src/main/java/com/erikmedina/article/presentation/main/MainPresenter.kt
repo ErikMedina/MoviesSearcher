@@ -42,7 +42,7 @@ constructor() : MainContract.Presenter {
         })
     }
 
-    override fun onItemSelected(id: Int) {
+    override fun onItemSelected(id: String) {
         view?.showLoading(true)
         contentInteractor.run(id, object : GetContentInteractor.Callback {
             override fun onSuccess(item: Item) {

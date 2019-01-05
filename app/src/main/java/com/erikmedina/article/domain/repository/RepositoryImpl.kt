@@ -33,7 +33,7 @@ class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
         })
     }
 
-    override fun getContent(id: Int, callback: Repository.Callback<Item>) {
+    override fun getContent(id: String, callback: Repository.Callback<Item>) {
         Log.i(TAG, "[getContent]")
         val call = apiRest.getContent(id)
         call.enqueue(object : Callback<ContentResponse> {

@@ -20,27 +20,27 @@
         tools:text="Article 1" />
 
     <TextView
-        android:id="@+id/tvSubtitleLabel"
+        android:id="@+id/tvPosterLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="36dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:text="@string/label.subtitle.colon"
+        android:text="@string/label.poster.colon"
         android:textSize="@dimen/textSize.medium"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <TextView
-        android:id="@+id/tvSubtitle"
+        android:id="@+id/tvPoster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="18dp"
-        app:layout_constraintStart_toStartOf="@id/tvSubtitleLabel"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtitleLabel"
+        app:layout_constraintStart_toStartOf="@id/tvPosterLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvPosterLabel"
         tools:text="Article 8 subtitle with placeholder text" />
 
     <TextView
@@ -51,8 +51,8 @@
         android:text="@string/label.description.colon"
         android:textSize="@dimen/textSize.medium"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/tvSubtitleLabel"
-        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+        app:layout_constraintStart_toStartOf="@id/tvPosterLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvPoster" />
 
     <TextView
         android:id="@+id/tvBody"
@@ -70,21 +70,21 @@
     non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Article 8" />
 
     <TextView
-        android:id="@+id/tvDateLabel"
+        android:id="@+id/tvYearLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="@string/label.date.colon"
+        android:text="@string/label.year.colon"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/tvBodyLabel"
         app:layout_constraintTop_toBottomOf="@id/tvBody" />
 
     <TextView
-        android:id="@+id/tvDate"
+        android:id="@+id/tvYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="@id/tvBody"
-        app:layout_constraintTop_toBottomOf="@id/tvDateLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvYearLabel"
         tools:text="18/04/2013 11:48" />
 </android.support.constraint.ConstraintLayout>

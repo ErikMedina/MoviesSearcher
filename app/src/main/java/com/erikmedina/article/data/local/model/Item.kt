@@ -10,9 +10,11 @@ import java.io.Serializable
  * because they are useful for holding data.
  */
 data class Item(
-        val id: Int,
+        val id: String,
         val title: String,
-        val subtitle: String,
-        val body: String,
-        val date: String
+        val poster: String,
+        val actors: String,
+        val director: String,
+        val years: String,
+        val plot: String
 ) : Serializable

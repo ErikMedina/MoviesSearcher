@@ -13,5 +13,5 @@ interface Repository {
 
     fun getContentList(title: String, callback: Callback<List<Item>>)
 
-    fun getContent(id: Int, callback: Callback<Item>)
+    fun getContent(id: String, callback: Callback<Item>)
 }

@@ -19,9 +19,9 @@ class ItemDetailActivity : BaseActivity() {
 
     private fun initializeItemDetail() {
         tvTitle.text = item.title
-        tvSubtitle.text = item.subtitle
-        tvBody.text = item.body
-        tvDate.text = item.date
+        tvPoster.text = item.poster
+        tvBody.text = item.plot
+        tvYear.text = item.years
     }
 
     override fun getLayoutId() = R.layout.activity_item_detail
