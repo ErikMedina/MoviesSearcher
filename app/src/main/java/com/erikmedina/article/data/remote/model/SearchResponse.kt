@@ -4,9 +4,9 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
-class ContentListResponse {
+class SearchResponse {
 
     @SerializedName("items")
     @Expose
-    var items: List<Item> = emptyList()
+    var searches: List<Search> = emptyList()
 }

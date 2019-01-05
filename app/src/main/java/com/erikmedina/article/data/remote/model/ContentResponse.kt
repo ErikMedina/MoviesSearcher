@@ -8,5 +8,5 @@ class ContentResponse {
 
     @SerializedName("item")
     @Expose
-    var item: Item = Item()
+    var search: Search = Search()
 }

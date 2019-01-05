@@ -1,13 +1,13 @@
 package com.erikmedina.article.util
 
 import com.erikmedina.article.data.local.model.Item
-import com.erikmedina.article.data.remote.model.ContentListResponse
+import com.erikmedina.article.data.remote.model.SearchResponse
 import com.erikmedina.article.data.remote.model.ContentResponse
 
 object Mapper {
 
-    fun mapItems(contentListResponse: ContentListResponse): List<Item> {
-        val items = contentListResponse.items
+    fun mapItems(searchResponse: SearchResponse): List<Item> {
+        val items = searchResponse.searches
         val itemViews = ArrayList<Item>()
         for (item in items) {
             val itemView = Item(
@@ -23,7 +23,7 @@ object Mapper {
     }
 
     fun mapItem(contentResponse: ContentResponse): Item {
-        val item = contentResponse.item
+        val item = contentResponse.search
         return Item(
                 id = item.id,
                 title = item.title,
