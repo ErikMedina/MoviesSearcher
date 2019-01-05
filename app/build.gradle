@@ -18,7 +18,7 @@ android {
     }
     buildTypes {
         all {
-            buildConfigField("String", "API_ENDPOINT", "\"http://dynamic.pulselive.com/\"")
+            buildConfigField("String", "API_ENDPOINT", "\"http://www.omdbapi.com/\"")
         }
         release {
             minifyEnabled false

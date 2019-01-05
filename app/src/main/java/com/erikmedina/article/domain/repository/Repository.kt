@@ -11,7 +11,7 @@ interface Repository {
         fun onError(throwable: Throwable)
     }
 
-    fun getContentList(callback: Callback<List<Item>>)
+    fun getContentList(title: String, callback: Callback<List<Item>>)
 
     fun getContent(id: Int, callback: Callback<Item>)
 }

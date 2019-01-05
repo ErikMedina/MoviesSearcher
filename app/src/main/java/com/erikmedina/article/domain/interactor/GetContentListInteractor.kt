@@ -12,5 +12,5 @@ interface GetContentListInteractor : Interactor {
         fun onError(throwable: Throwable)
     }
 
-    fun run(callback: Callback)
+    fun run(title: String, callback: Callback)
 }

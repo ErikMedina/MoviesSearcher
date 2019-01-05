@@ -58,7 +58,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun onResume() {
         super.onResume()
         presenter.takeView(this)
-        presenter.getContentList()
+        presenter.getContentList("galaxy")
     }
 
     override fun onPause() {

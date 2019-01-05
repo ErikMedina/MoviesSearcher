@@ -2,8 +2,8 @@ package com.erikmedina.article.domain.repository
 
 import android.util.Log
 import com.erikmedina.article.data.local.model.Item
-import com.erikmedina.article.data.remote.model.SearchResponse
 import com.erikmedina.article.data.remote.model.ContentResponse
+import com.erikmedina.article.data.remote.model.SearchResponse
 import com.erikmedina.article.data.remote.service.ApiRest
 import com.erikmedina.article.util.Mapper
 import retrofit2.Call
@@ -17,9 +17,9 @@ import javax.inject.Singleton
 @Singleton
 class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
 
-    override fun getContentList(callback: Repository.Callback<List<Item>>) {
+    override fun getContentList(title: String, callback: Repository.Callback<List<Item>>) {
         Log.i(TAG, "[getContentList]")
-        val call = apiRest.getContentList()
+        val call = apiRest.getContentList(title)
         call.enqueue(object : Callback<SearchResponse> {
             override fun onResponse(call: Call<SearchResponse>?, response: Response<SearchResponse>) {
                 if (response.isSuccessful) {

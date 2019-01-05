@@ -24,9 +24,9 @@ constructor() : MainContract.Presenter {
         this.view = null
     }
 
-    override fun getContentList() {
+    override fun getContentList(title: String) {
         view?.showLoading(true)
-        contentListInteractor.run(object : GetContentListInteractor.Callback {
+        contentListInteractor.run(title, object : GetContentListInteractor.Callback {
             override fun onSuccess(items: List<Item>) {
                 view?.setItemViews(items)
                 view?.showLoading(false)

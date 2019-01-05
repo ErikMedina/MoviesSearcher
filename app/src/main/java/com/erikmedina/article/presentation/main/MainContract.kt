@@ -19,7 +19,7 @@ interface MainContract {
 
     interface Presenter : BasePresenter<View> {
 
-        fun getContentList()
+        fun getContentList(title: String)
 
         fun onItemSelected(id: Int)
     }

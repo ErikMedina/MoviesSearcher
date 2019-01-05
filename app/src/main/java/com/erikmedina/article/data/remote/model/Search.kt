@@ -7,19 +7,19 @@ import com.google.gson.annotations.SerializedName
 
 class Search {
 
-    @SerializedName("id")
-    @Expose
-    var id: Int = -1
-    @SerializedName("title")
+    @SerializedName("Title")
     @Expose
     var title: String = Constant.UNKNOWN
-    @SerializedName("subtitle")
+    @SerializedName("Year")
     @Expose
-    var subtitle: String = Constant.UNKNOWN
-    @SerializedName("body")
+    var year: String = Constant.UNKNOWN
+    @SerializedName("imdbID")
     @Expose
-    var body: String = Constant.UNKNOWN
-    @SerializedName("date")
+    var imdbID: String = Constant.UNKNOWN
+    @SerializedName("Type")
     @Expose
-    var date: String = Constant.UNKNOWN
+    var type: String = Constant.UNKNOWN
+    @SerializedName("Poster")
+    @Expose
+    var poster: String = Constant.UNKNOWN
 }
