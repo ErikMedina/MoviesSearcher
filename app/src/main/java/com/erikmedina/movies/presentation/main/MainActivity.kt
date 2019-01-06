@@ -5,11 +5,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import com.erikmedina.movies.R
-import com.erikmedina.movies.data.local.model.Item
 import com.erikmedina.movies.core.platform.BaseActivity
+import com.erikmedina.movies.data.local.model.Item
 import com.erikmedina.movies.presentation.itemdetail.ItemDetailActivity
 import com.erikmedina.movies.presentation.main.adapter.ItemAdapter
 import com.erikmedina.movies.util.Constant
@@ -31,6 +33,7 @@ class MainActivity : BaseActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         context = this
         initializeRecycler()
+        initializeSearchBox()
     }
 
     override fun getLayoutId() = R.layout.activity_main
@@ -46,10 +49,22 @@ class MainActivity : BaseActivity(), MainContract.View {
         recycler.layoutManager = LinearLayoutManager(this)
     }
 
+    private fun initializeSearchBox() {
+        etMovies.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                presenter.getContentList(s.toString())
+            }
+        })
+    }
+
     override fun onResume() {
         super.onResume()
         presenter.takeView(this)
-        presenter.getContentList("galaxy")
     }
 
     override fun onPause() {

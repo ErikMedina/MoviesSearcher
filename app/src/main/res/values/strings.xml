@@ -4,4 +4,6 @@
     <string name="label_poster_colon">Poster:</string>
     <string name="label_year_colon">Year:</string>
     <string name="label_description_colon">Description:</string>
+
+    <string name="hint_search_movies">Search Movies</string>
 </resources>
