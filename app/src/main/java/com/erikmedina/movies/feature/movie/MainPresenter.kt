@@ -7,7 +7,7 @@ class MainPresenter
 constructor() : MainContract.Presenter {
 
     @Inject
-    lateinit var contentListInteractor: GetContentListInteractor
+    lateinit var movies: GetMovies
     @Inject
     lateinit var contentInteractor: GetContentInteractor
 
@@ -23,7 +23,7 @@ constructor() : MainContract.Presenter {
 
     override fun getContentList(title: String) {
         view?.showLoading(true)
-        contentListInteractor.run(title, object : GetContentListInteractor.Callback {
+        movies.run(title, object : GetMovies.Callback {
             override fun onSuccess(movies: List<Movie>) {
                 view?.setItemViews(movies)
                 view?.showLoading(false)
