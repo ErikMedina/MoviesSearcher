@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 
 interface Repository {
 
@@ -11,7 +11,7 @@ interface Repository {
         fun onError(throwable: Throwable)
     }
 
-    fun getContentList(title: String, callback: Callback<List<Item>>)
+    fun getContentList(title: String, callback: Callback<List<Movie>>)
 
-    fun getContent(id: String, callback: Callback<Item>)
+    fun getContent(id: String, callback: Callback<Movie>)
 }

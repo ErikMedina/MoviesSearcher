@@ -9,7 +9,7 @@ import java.io.Serializable
  * We are going to use Kotlin's Data Classes (https://kotlinlang.org/docs/reference/data-classes.html)
  * because they are useful for holding data.
  */
-data class Item(
+data class Movie(
         val id: String,
         val title: String,
         val poster: String,

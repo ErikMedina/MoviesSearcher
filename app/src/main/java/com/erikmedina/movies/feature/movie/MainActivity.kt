@@ -11,7 +11,7 @@ import android.util.Log
 import android.view.View
 import com.erikmedina.movies.R
 import com.erikmedina.movies.core.platform.BaseActivity
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.util.Constant
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,9 +38,9 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     private fun initializeRecycler() {
         adapter = ItemAdapter(object : ItemAdapter.OnItemClickListener {
-            override fun onItemClick(item: Item) {
-                Log.i(TAG, "[onItemClick] item selected: ${item.title}")
-                presenter.onItemSelected(item.id)
+            override fun onItemClick(movie: Movie) {
+                Log.i(TAG, "[onItemClick] item selected: ${movie.title}")
+                presenter.onItemSelected(movie.id)
             }
         })
         recycler.adapter = adapter
@@ -70,13 +70,13 @@ class MainActivity : BaseActivity(), MainContract.View {
         presenter.dropView()
     }
 
-    override fun setItemViews(items: List<Item>) {
-        adapter.setItemViews(items)
+    override fun setItemViews(movies: List<Movie>) {
+        adapter.setItemViews(movies)
     }
 
-    override fun startItemDetailActivity(item: Item) {
+    override fun startItemDetailActivity(movie: Movie) {
         val intent = Intent(context, ItemDetailActivity::class.java)
-        intent.putExtra(Constant.EXTRA_ITEM, item)
+        intent.putExtra(Constant.EXTRA_ITEM, movie)
         startActivity(intent)
     }
 

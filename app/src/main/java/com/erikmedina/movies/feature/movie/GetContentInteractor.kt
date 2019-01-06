@@ -1,13 +1,13 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.interactor.UseCase
 
 interface GetContentInteractor : UseCase {
 
     interface Callback {
 
-        fun onSuccess(item: Item)
+        fun onSuccess(movie: Movie)
 
         fun onError(throwable: Throwable)
     }

@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import javax.inject.Inject
 
 class MainPresenter
@@ -25,8 +25,8 @@ constructor() : MainContract.Presenter {
     override fun getContentList(title: String) {
         view?.showLoading(true)
         contentListInteractor.run(title, object : GetContentListInteractor.Callback {
-            override fun onSuccess(items: List<Item>) {
-                view?.setItemViews(items)
+            override fun onSuccess(movies: List<Movie>) {
+                view?.setItemViews(movies)
                 view?.showLoading(false)
             }
 
@@ -43,9 +43,9 @@ constructor() : MainContract.Presenter {
     override fun onItemSelected(id: String) {
         view?.showLoading(true)
         contentInteractor.run(id, object : GetContentInteractor.Callback {
-            override fun onSuccess(item: Item) {
+            override fun onSuccess(movie: Movie) {
                 view?.showLoading(false)
-                view?.startItemDetailActivity(item)
+                view?.startItemDetailActivity(movie)
             }
 
             override fun onError(throwable: Throwable) {

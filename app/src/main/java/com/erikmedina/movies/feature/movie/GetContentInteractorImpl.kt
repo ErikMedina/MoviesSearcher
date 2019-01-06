@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.util.Constant
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
@@ -21,9 +21,9 @@ constructor(private val repository: Repository) : GetContentInteractor {
 
     override fun execute() {
         launch(UI) {
-            repository.getContent(id, object : Repository.Callback<Item> {
-                override fun onSuccess(item: Item) {
-                    callback.onSuccess(item)
+            repository.getContent(id, object : Repository.Callback<Movie> {
+                override fun onSuccess(movie: Movie) {
+                    callback.onSuccess(movie)
                 }
 
                 override fun onError(throwable: Throwable) {

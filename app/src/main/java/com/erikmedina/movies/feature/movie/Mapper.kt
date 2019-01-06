@@ -1,17 +1,17 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.data.remote.model.Search
 import com.erikmedina.movies.data.remote.model.SearchResponse
 import com.erikmedina.movies.core.util.Constant
 
 object Mapper {
 
-    fun mapItems(searchResponse: SearchResponse): List<Item> {
+    fun mapMovies(searchResponse: SearchResponse): List<Movie> {
         val movies = searchResponse.movies
-        val itemViews = ArrayList<Item>()
+        val itemViews = ArrayList<Movie>()
         for (movie in movies) {
-            val itemView = Item(
+            val itemView = Movie(
                     id = movie.imdbID,
                     title = movie.title,
                     actors = Constant.UNKNOWN,
@@ -25,8 +25,8 @@ object Mapper {
         return itemViews
     }
 
-    fun mapItem(search: Search): Item {
-        return Item(
+    fun mapMovie(search: Search): Movie {
+        return Movie(
                 id = search.imdbID,
                 title = search.title,
                 poster = search.poster,

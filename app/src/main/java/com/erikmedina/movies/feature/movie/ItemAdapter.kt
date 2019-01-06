@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.erikmedina.movies.R
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 
 class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClick(item: Item)
+        fun onItemClick(movie: Movie)
     }
 
-    private var itemViews = emptyList<Item>()
+    private var itemViews = emptyList<Movie>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
@@ -30,8 +30,8 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         holder.bind(itemViews[position], listener)
     }
 
-    fun setItemViews(items: List<Item>) {
-        this.itemViews = items
+    fun setItemViews(movies: List<Movie>) {
+        this.itemViews = movies
         notifyDataSetChanged()
     }
 
@@ -41,9 +41,9 @@ class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         var poster: TextView = itemView.findViewById(R.id.tvPoster)
         var year: TextView = itemView.findViewById(R.id.tvYear)
 
-        fun bind(item: Item, listener: OnItemClickListener) {
+        fun bind(movie: Movie, listener: OnItemClickListener) {
             itemView.setOnClickListener {
-                listener.onItemClick(item)
+                listener.onItemClick(movie)
             }
         }
     }

@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import javax.inject.Inject
@@ -20,9 +20,9 @@ constructor(private val repository: Repository) : GetContentListInteractor {
 
     override fun execute() {
         launch(UI) {
-            repository.getContentList(title, object : Repository.Callback<List<Item>> {
-                override fun onSuccess(items: List<Item>) {
-                    callback.onSuccess(items)
+            repository.getContentList(title, object : Repository.Callback<List<Movie>> {
+                override fun onSuccess(movies: List<Movie>) {
+                    callback.onSuccess(movies)
                 }
 
                 override fun onError(throwable: Throwable) {

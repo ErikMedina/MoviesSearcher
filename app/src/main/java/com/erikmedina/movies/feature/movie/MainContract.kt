@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Item
+import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.platform.BasePresenter
 import com.erikmedina.movies.core.platform.BaseView
 
@@ -12,9 +12,9 @@ interface MainContract {
 
     interface View : BaseView<Presenter> {
 
-        fun setItemViews(items: List<Item>)
+        fun setItemViews(movies: List<Movie>)
 
-        fun startItemDetailActivity(item: Item)
+        fun startItemDetailActivity(movie: Movie)
     }
 
     interface Presenter : BasePresenter<View> {
