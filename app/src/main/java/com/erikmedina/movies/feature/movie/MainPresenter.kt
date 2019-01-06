@@ -9,7 +9,7 @@ constructor() : MainContract.Presenter {
     @Inject
     lateinit var movies: GetMovies
     @Inject
-    lateinit var contentInteractor: GetContentInteractor
+    lateinit var movieDetail: GetMovieDetail
 
     private var view: MainContract.View? = null
 
@@ -41,7 +41,7 @@ constructor() : MainContract.Presenter {
 
     override fun onItemSelected(id: String) {
         view?.showLoading(true)
-        contentInteractor.run(id, object : GetContentInteractor.Callback {
+        movieDetail.run(id, object : GetMovieDetail.Callback {
             override fun onSuccess(movie: Movie) {
                 view?.showLoading(false)
                 view?.startItemDetailActivity(movie)

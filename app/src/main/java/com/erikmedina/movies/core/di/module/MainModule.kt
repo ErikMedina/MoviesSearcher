@@ -1,7 +1,6 @@
 package com.erikmedina.movies.core.di.module
 
-import com.erikmedina.movies.feature.movie.GetContentInteractor
-import com.erikmedina.movies.feature.movie.GetContentInteractorImpl
+import com.erikmedina.movies.feature.movie.GetMovieDetail
 import com.erikmedina.movies.feature.movie.GetMovies
 import com.erikmedina.movies.feature.movie.MainContract
 import com.erikmedina.movies.feature.movie.MainPresenter
@@ -17,14 +16,12 @@ class MainModule {
     }
 
     @Provides
-    fun provideGetMoviesInteractor(interactor: GetMovies.Interactor)
-            : GetMovies {
+    fun provideGetMoviesInteractor(interactor: GetMovies.Interactor): GetMovies {
         return interactor
     }
 
     @Provides
-    fun provideGetContentInteractor(getContentInteractorImpl: GetContentInteractorImpl)
-            : GetContentInteractor {
-        return getContentInteractorImpl
+    fun provideGetMovieDetailInteractor(interactor: GetMovieDetail.Interactor): GetMovieDetail {
+        return interactor
     }
 }
