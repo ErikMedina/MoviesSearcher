@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.core.util.Constant
+import com.erikmedina.movies.core.extension.unknown
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -9,77 +9,77 @@ class Search {
 
     @SerializedName("Title")
     @Expose
-    var title: String = Constant.UNKNOWN
+    var title: kotlin.String = String.unknown()
     @SerializedName("Year")
     @Expose
-    var year: String = Constant.UNKNOWN
+    var year: kotlin.String = String.unknown()
     @SerializedName("Rated")
     @Expose
-    var rated: String = Constant.UNKNOWN
+    var rated: kotlin.String = String.unknown()
     @SerializedName("Released")
     @Expose
-    var released: String = Constant.UNKNOWN
+    var released: kotlin.String = String.unknown()
     @SerializedName("Runtime")
     @Expose
-    var runtime: String = Constant.UNKNOWN
+    var runtime: kotlin.String = String.unknown()
     @SerializedName("Genre")
     @Expose
-    var genre: String = Constant.UNKNOWN
+    var genre: kotlin.String = String.unknown()
     @SerializedName("Director")
     @Expose
-    var director: String = Constant.UNKNOWN
+    var director: kotlin.String = String.unknown()
     @SerializedName("Writer")
     @Expose
-    var writer: String = Constant.UNKNOWN
+    var writer: kotlin.String = String.unknown()
     @SerializedName("Actors")
     @Expose
-    var actors: String = Constant.UNKNOWN
+    var actors: kotlin.String = String.unknown()
     @SerializedName("Plot")
     @Expose
-    var plot: String = Constant.UNKNOWN
+    var plot: kotlin.String = String.unknown()
     @SerializedName("Language")
     @Expose
-    var language: String = Constant.UNKNOWN
+    var language: kotlin.String = String.unknown()
     @SerializedName("Country")
     @Expose
-    var country: String = Constant.UNKNOWN
+    var country: kotlin.String = String.unknown()
     @SerializedName("Awards")
     @Expose
-    var awards: String = Constant.UNKNOWN
+    var awards: kotlin.String = String.unknown()
     @SerializedName("Poster")
     @Expose
-    var poster: String = Constant.UNKNOWN
+    var poster: kotlin.String = String.unknown()
     @SerializedName("Ratings")
     @Expose
     var ratings: List<Rating> = emptyList()
     @SerializedName("Metascore")
     @Expose
-    var metascore: String = Constant.UNKNOWN
+    var metascore: kotlin.String = String.unknown()
     @SerializedName("imdbRating")
     @Expose
-    var imdbRating: String = Constant.UNKNOWN
+    var imdbRating: kotlin.String = String.unknown()
     @SerializedName("imdbVotes")
     @Expose
-    var imdbVotes: String = Constant.UNKNOWN
+    var imdbVotes: kotlin.String = String.unknown()
     @SerializedName("imdbID")
     @Expose
-    var imdbID: String = Constant.UNKNOWN
+    var imdbID: kotlin.String = String.unknown()
     @SerializedName("Type")
     @Expose
-    var type: String = Constant.UNKNOWN
+    var type: kotlin.String = String.unknown()
     @SerializedName("DVD")
     @Expose
-    var dVD: String = Constant.UNKNOWN
+    var dVD: kotlin.String = String.unknown()
     @SerializedName("BoxOffice")
     @Expose
-    var boxOffice: String = Constant.UNKNOWN
+    var boxOffice: kotlin.String = String.unknown()
     @SerializedName("Production")
     @Expose
-    var production: String = Constant.UNKNOWN
+    var production: kotlin.String = String.unknown()
     @SerializedName("Website")
     @Expose
-    var website: String = Constant.UNKNOWN
+    var website: kotlin.String = String.unknown()
     @SerializedName("Response")
     @Expose
-    var response: String = Constant.UNKNOWN
+    var response: kotlin.String = String.unknown()
 }

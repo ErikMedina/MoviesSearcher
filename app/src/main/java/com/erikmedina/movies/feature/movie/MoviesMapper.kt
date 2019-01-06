@@ -1,6 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.core.util.Constant
+import com.erikmedina.movies.core.extension.unknown
 
 object MoviesMapper {
 
@@ -11,11 +11,11 @@ object MoviesMapper {
             val itemView = Movie(
                     id = movie.imdbID,
                     title = movie.title,
-                    actors = Constant.UNKNOWN,
-                    director = Constant.UNKNOWN,
+                    actors = String.unknown(),
+                    director = String.unknown(),
                     poster = movie.poster,
                     years = movie.year,
-                    plot = Constant.UNKNOWN
+                    plot = String.unknown()
             )
             itemViews.add(itemView)
         }

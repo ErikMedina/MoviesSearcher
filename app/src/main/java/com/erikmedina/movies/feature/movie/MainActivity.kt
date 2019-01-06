@@ -3,15 +3,12 @@ package com.erikmedina.movies.feature.movie
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
 import com.erikmedina.movies.R
 import com.erikmedina.movies.core.platform.BaseActivity
-import com.erikmedina.movies.core.util.Constant
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -75,11 +72,12 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     override fun startItemDetailActivity(movie: Movie) {
         val intent = Intent(context, MovieDetailActivity::class.java)
-        intent.putExtra(Constant.EXTRA_ITEM, movie)
+        intent.putExtra(EXTRA_MOVIE, movie)
         startActivity(intent)
     }
 
     companion object {
         val TAG = MainActivity::class.java.simpleName.toString()
+        const val EXTRA_MOVIE = "extra_movie"
     }
 }
