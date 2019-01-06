@@ -79,15 +79,6 @@ class MainActivity : BaseActivity(), MainContract.View {
         startActivity(intent)
     }
 
-    override fun showError(error: String) {
-        val rootView = window.decorView.findViewById<View>(android.R.id.content)
-        Snackbar.make(rootView, error, Snackbar.LENGTH_SHORT).show()
-    }
-
-    override fun showLoading(show: Boolean) {
-        progressBar.visibility = if (show) View.VISIBLE else View.GONE
-    }
-
     companion object {
         val TAG = MainActivity::class.java.simpleName.toString()
     }

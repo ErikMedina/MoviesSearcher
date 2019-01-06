@@ -1,6 +1,6 @@
 package com.erikmedina.movies.core.platform
 
-interface BaseView<T> {
+interface BaseView {
 
     fun showError(error: String)
 

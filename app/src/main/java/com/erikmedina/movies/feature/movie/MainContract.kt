@@ -9,7 +9,7 @@ import com.erikmedina.movies.core.platform.BaseView
 
 interface MainContract {
 
-    interface View : BaseView<Presenter> {
+    interface View : BaseView {
 
         fun setItemViews(movies: List<Movie>)
 
