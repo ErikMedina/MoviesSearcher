@@ -1,4 +1,4 @@
-package com.erikmedina.movies.util
+package com.erikmedina.movies.core.util
 
 object Constant {
 
