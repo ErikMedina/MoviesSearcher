@@ -2,9 +2,6 @@ package com.erikmedina.movies.feature.movie
 
 import android.util.Log
 import com.erikmedina.movies.core.rest.ApiRest
-import com.erikmedina.movies.data.local.model.Movie
-import com.erikmedina.movies.data.remote.model.Search
-import com.erikmedina.movies.data.remote.model.SearchResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,7 +1,7 @@
 package com.erikmedina.movies.core.rest
 
-import com.erikmedina.movies.data.remote.model.Search
-import com.erikmedina.movies.data.remote.model.SearchResponse
+import com.erikmedina.movies.feature.movie.Search
+import com.erikmedina.movies.feature.movie.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

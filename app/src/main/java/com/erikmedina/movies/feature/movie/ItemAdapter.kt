@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.erikmedina.movies.R
-import com.erikmedina.movies.data.local.model.Movie
 
 class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 

@@ -1,4 +1,4 @@
-package com.erikmedina.movies.data.remote.model
+package com.erikmedina.movies.feature.movie
 
 import com.erikmedina.movies.core.util.Constant
 import com.google.gson.annotations.Expose

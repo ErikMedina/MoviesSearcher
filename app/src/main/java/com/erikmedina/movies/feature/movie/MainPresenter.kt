@@ -1,6 +1,5 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Movie
 import javax.inject.Inject
 
 class MainPresenter

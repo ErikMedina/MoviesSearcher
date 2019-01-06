@@ -1,6 +1,5 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.platform.BasePresenter
 import com.erikmedina.movies.core.platform.BaseView
 

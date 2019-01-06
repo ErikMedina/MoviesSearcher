@@ -1,7 +1,5 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Movie
-
 interface Repository {
 
     interface Callback<T> {

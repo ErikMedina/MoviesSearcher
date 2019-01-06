@@ -1,8 +1,5 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Movie
-import com.erikmedina.movies.data.remote.model.Search
-import com.erikmedina.movies.data.remote.model.SearchResponse
 import com.erikmedina.movies.core.util.Constant
 
 object Mapper {

@@ -3,7 +3,6 @@ package com.erikmedina.movies.feature.movie
 import android.os.Bundle
 import com.erikmedina.movies.R
 import com.erikmedina.movies.core.platform.BaseActivity
-import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.util.Constant
 import kotlinx.android.synthetic.main.activity_item_detail.*
 

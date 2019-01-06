@@ -1,6 +1,5 @@
 package com.erikmedina.movies.feature.movie
 
-import com.erikmedina.movies.data.local.model.Movie
 import com.erikmedina.movies.core.util.Constant
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch

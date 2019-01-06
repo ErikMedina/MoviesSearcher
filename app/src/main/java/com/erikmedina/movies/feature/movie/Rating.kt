@@ -1,4 +1,4 @@
-package com.erikmedina.movies.data.remote.model
+package com.erikmedina.movies.feature.movie
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

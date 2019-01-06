@@ -1,4 +1,4 @@
-package com.erikmedina.movies.data.local.model
+package com.erikmedina.movies.feature.movie
 
 import java.io.Serializable
 
