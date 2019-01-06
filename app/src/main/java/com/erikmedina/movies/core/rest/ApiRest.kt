@@ -1,4 +1,4 @@
-package com.erikmedina.movies.data.remote.service
+package com.erikmedina.movies.core.rest
 
 import com.erikmedina.movies.data.remote.model.Search
 import com.erikmedina.movies.data.remote.model.SearchResponse
@@ -16,9 +16,9 @@ interface ApiRest {
         const val MOVIE_ID = "i"
     }
 
-    @GET("./?apikey=4dfc3ce9")
+    @GET(".")
     fun getContentList(@Query(SEARCH) title: String): Call<SearchResponse>
 
-    @GET("./?apikey=4dfc3ce9")
+    @GET(".")
     fun getContent(@Query(MOVIE_ID) id: String): Call<Search>
 }

@@ -1,4 +1,4 @@
-package com.erikmedina.movies.di.qualifier
+package com.erikmedina.movies.core.di.qualifier
 
 import javax.inject.Qualifier
 

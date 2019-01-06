@@ -2,9 +2,9 @@ package com.erikmedina.movies
 
 import android.app.Application
 import android.content.Context
-import com.erikmedina.movies.di.component.DaggerMyApplicationComponent
-import com.erikmedina.movies.di.component.MyApplicationComponent
-import com.erikmedina.movies.di.module.MyApplicationModule
+import com.erikmedina.movies.core.di.component.DaggerMyApplicationComponent
+import com.erikmedina.movies.core.di.component.MyApplicationComponent
+import com.erikmedina.movies.core.di.module.MyApplicationModule
 
 class MyApplication : Application() {
 

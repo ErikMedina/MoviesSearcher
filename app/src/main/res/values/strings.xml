@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Articles</string>
-    <string name="label.title.colon">Title:</string>
-    <string name="label.poster.colon">Poster:</string>
-    <string name="label.year.colon">Year:</string>
-    <string name="label.description.colon">Description:</string>
+    <string name="app_name">Movies</string>
+    <string name="label_title_colon">Title:</string>
+    <string name="label_poster_colon">Poster:</string>
+    <string name="label_year_colon">Year:</string>
+    <string name="label_description_colon">Description:</string>
 </resources>

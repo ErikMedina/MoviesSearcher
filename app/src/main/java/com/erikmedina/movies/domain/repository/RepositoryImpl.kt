@@ -1,10 +1,10 @@
 package com.erikmedina.movies.domain.repository
 
 import android.util.Log
+import com.erikmedina.movies.core.rest.ApiRest
 import com.erikmedina.movies.data.local.model.Item
 import com.erikmedina.movies.data.remote.model.Search
 import com.erikmedina.movies.data.remote.model.SearchResponse
-import com.erikmedina.movies.data.remote.service.ApiRest
 import com.erikmedina.movies.util.Mapper
 import retrofit2.Call
 import retrofit2.Callback

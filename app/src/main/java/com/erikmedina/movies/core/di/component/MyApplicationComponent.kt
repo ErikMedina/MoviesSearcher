@@ -1,10 +1,10 @@
-package com.erikmedina.movies.di.component
+package com.erikmedina.movies.core.di.component
 
 import android.content.Context
 import com.erikmedina.movies.MyApplication
-import com.erikmedina.movies.data.remote.service.ApiRest
-import com.erikmedina.movies.di.module.MyApplicationModule
-import com.erikmedina.movies.di.qualifier.MyApplicationContext
+import com.erikmedina.movies.core.rest.ApiRest
+import com.erikmedina.movies.core.di.module.MyApplicationModule
+import com.erikmedina.movies.core.di.qualifier.MyApplicationContext
 import com.erikmedina.movies.domain.repository.Repository
 import dagger.Component
 import javax.inject.Singleton

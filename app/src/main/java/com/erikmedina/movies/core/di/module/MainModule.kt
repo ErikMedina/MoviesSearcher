@@ -1,4 +1,4 @@
-package com.erikmedina.movies.di.module
+package com.erikmedina.movies.core.di.module
 
 import com.erikmedina.movies.domain.interactor.GetContentInteractor
 import com.erikmedina.movies.domain.interactor.GetContentInteractorImpl

@@ -10,8 +10,8 @@ import android.view.View
 import com.erikmedina.movies.MyApplication
 import com.erikmedina.movies.R
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.di.component.DaggerMainComponent
-import com.erikmedina.movies.di.module.MainModule
+import com.erikmedina.movies.core.di.component.DaggerMainComponent
+import com.erikmedina.movies.core.di.module.MainModule
 import com.erikmedina.movies.presentation.BaseActivity
 import com.erikmedina.movies.presentation.itemdetail.ItemDetailActivity
 import com.erikmedina.movies.presentation.main.adapter.ItemAdapter

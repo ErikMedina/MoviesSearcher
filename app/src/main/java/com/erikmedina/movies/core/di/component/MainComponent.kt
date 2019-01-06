@@ -1,7 +1,7 @@
-package com.erikmedina.movies.di.component
+package com.erikmedina.movies.core.di.component
 
-import com.erikmedina.movies.di.module.MainModule
-import com.erikmedina.movies.di.qualifier.PerActivity
+import com.erikmedina.movies.core.di.module.MainModule
+import com.erikmedina.movies.core.di.qualifier.PerActivity
 import com.erikmedina.movies.presentation.main.MainActivity
 import dagger.Component
 
