@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.erikmedina.article"
+        applicationId "com.erikmedina.movies"
         minSdkVersion 14 //this app will support Android 4.0 and up
         targetSdkVersion 27
         versionCode 1
