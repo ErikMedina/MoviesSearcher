@@ -1,5 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
+import com.erikmedina.movies.core.extension.empty
 import com.erikmedina.movies.core.interactor.UseCase
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
@@ -20,7 +21,7 @@ interface GetMovies : UseCase {
     @Inject
     constructor(private val moviesRepository: MoviesRepository) : GetMovies {
 
-        private var title = ""
+        private var title = String.empty()
         private lateinit var callback: GetMovies.Callback
 
         override fun run(title: String, callback: GetMovies.Callback) {
