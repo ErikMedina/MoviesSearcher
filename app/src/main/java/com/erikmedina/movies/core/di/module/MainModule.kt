@@ -1,9 +1,9 @@
 package com.erikmedina.movies.core.di.module
 
-import com.erikmedina.movies.domain.interactor.GetContentInteractor
-import com.erikmedina.movies.domain.interactor.GetContentInteractorImpl
-import com.erikmedina.movies.domain.interactor.GetContentListInteractor
-import com.erikmedina.movies.domain.interactor.GetContentListInteractorImpl
+import com.erikmedina.movies.feature.movie.GetContentInteractor
+import com.erikmedina.movies.feature.movie.GetContentInteractorImpl
+import com.erikmedina.movies.feature.movie.GetContentListInteractor
+import com.erikmedina.movies.feature.movie.GetContentListInteractorImpl
 import com.erikmedina.movies.feature.movie.MainContract
 import com.erikmedina.movies.feature.movie.MainPresenter
 import dagger.Module

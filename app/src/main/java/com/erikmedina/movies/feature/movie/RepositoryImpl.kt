@@ -1,4 +1,4 @@
-package com.erikmedina.movies.domain.repository
+package com.erikmedina.movies.feature.movie
 
 import android.util.Log
 import com.erikmedina.movies.core.rest.ApiRest

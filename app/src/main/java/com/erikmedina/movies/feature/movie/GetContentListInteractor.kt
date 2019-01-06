@@ -1,9 +1,9 @@
-package com.erikmedina.movies.domain.interactor
+package com.erikmedina.movies.feature.movie
 
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.domain.interactor.base.Interactor
+import com.erikmedina.movies.core.interactor.UseCase
 
-interface GetContentListInteractor : Interactor {
+interface GetContentListInteractor : UseCase {
 
     interface Callback {
 

@@ -1,9 +1,9 @@
-package com.erikmedina.movies.domain.interactor.base
+package com.erikmedina.movies.core.interactor
 
 /**
  * This is the main interface of an interactor. Each interactor serves a specific use case.
  */
-interface Interactor {
+interface UseCase {
 
     /**
      * This is the main method that starts an interactor. It will make sure that the interactor operation is done on a

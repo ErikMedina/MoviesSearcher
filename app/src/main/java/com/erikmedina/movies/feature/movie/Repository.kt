@@ -1,4 +1,4 @@
-package com.erikmedina.movies.domain.repository
+package com.erikmedina.movies.feature.movie
 
 import com.erikmedina.movies.data.local.model.Item
 

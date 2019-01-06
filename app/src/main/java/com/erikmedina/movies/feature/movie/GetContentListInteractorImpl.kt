@@ -1,7 +1,6 @@
-package com.erikmedina.movies.domain.interactor
+package com.erikmedina.movies.feature.movie
 
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.domain.repository.Repository
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import javax.inject.Inject

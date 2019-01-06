@@ -1,8 +1,6 @@
 package com.erikmedina.movies.feature.movie
 
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.domain.interactor.GetContentInteractor
-import com.erikmedina.movies.domain.interactor.GetContentListInteractor
 import javax.inject.Inject
 
 class MainPresenter
