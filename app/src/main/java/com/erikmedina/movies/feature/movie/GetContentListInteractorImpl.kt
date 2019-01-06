@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class GetContentListInteractorImpl
 @Inject
-constructor(private val repository: Repository) : GetContentListInteractor {
+constructor(private val moviesRepository: MoviesRepository) : GetContentListInteractor {
 
     private var title = ""
     private lateinit var callback: GetContentListInteractor.Callback
@@ -19,7 +19,7 @@ constructor(private val repository: Repository) : GetContentListInteractor {
 
     override fun execute() {
         launch(UI) {
-            repository.getContentList(title, object : Repository.Callback<List<Movie>> {
+            moviesRepository.getContentList(title, object : MoviesRepository.Callback<List<Movie>> {
                 override fun onSuccess(movies: List<Movie>) {
                     callback.onSuccess(movies)
                 }

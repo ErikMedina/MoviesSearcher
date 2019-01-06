@@ -2,10 +2,9 @@ package com.erikmedina.movies.core.di.module
 
 import android.content.Context
 import com.erikmedina.movies.MyApplication
-import com.erikmedina.movies.core.rest.ApiRest
-import com.erikmedina.movies.core.rest.RetrofitFactory
-import com.erikmedina.movies.feature.movie.Repository
-import com.erikmedina.movies.feature.movie.RepositoryImpl
+import com.erikmedina.movies.core.network.ApiRest
+import com.erikmedina.movies.core.network.RetrofitFactory
+import com.erikmedina.movies.feature.movie.MoviesRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -19,8 +18,8 @@ class MyApplicationModule {
     }
 
     @Provides
-    fun provideRepository(repository: RepositoryImpl): Repository {
-        return repository
+    fun provideMoviesRepository(moviesRepository: MoviesRepository.Network): MoviesRepository {
+        return moviesRepository
     }
 
     @Singleton

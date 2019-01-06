@@ -1,4 +1,4 @@
-package com.erikmedina.movies.core.rest
+package com.erikmedina.movies.core.network
 
 import com.erikmedina.movies.feature.movie.Search
 import com.erikmedina.movies.feature.movie.SearchResponse
