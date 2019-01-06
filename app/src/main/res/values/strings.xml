@@ -4,6 +4,8 @@
     <string name="label_poster_colon">Poster:</string>
     <string name="label_year_colon">Year:</string>
     <string name="label_description_colon">Description:</string>
-
+    <!--Hints-->
     <string name="hint_search_movies">Search Movies</string>
+    <!-- Errors-->
+    <string name="error_network">There was a problem. Try later</string>
 </resources>

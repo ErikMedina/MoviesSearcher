@@ -1,15 +1,16 @@
 package com.erikmedina.movies.feature.movie
 
+import android.content.Context
+import com.erikmedina.movies.R
 import javax.inject.Inject
 
 class MainPresenter
 @Inject
-constructor() : MainContract.Presenter {
-
-    @Inject
-    lateinit var movies: GetMovies
-    @Inject
-    lateinit var movieDetail: GetMovieDetail
+constructor(
+        private val context: Context,
+        private val getMovies: GetMovies,
+        private val getMovieDetail: GetMovieDetail
+) : MainContract.Presenter {
 
     private var view: MainContract.View? = null
 
@@ -23,7 +24,7 @@ constructor() : MainContract.Presenter {
 
     override fun getContentList(title: String) {
         view?.showLoading(true)
-        movies.run(title, object : GetMovies.Callback {
+        getMovies.run(title, object : GetMovies.Callback {
             override fun onSuccess(movies: List<Movie>) {
                 view?.setItemViews(movies)
                 view?.showLoading(false)
@@ -33,7 +34,7 @@ constructor() : MainContract.Presenter {
                 //If we create an ErrorManager, depends of the type of error we can show different messages to
                 //the user. Now we show the same message.
                 // Also if we inject a context, we can retrieve string resources and avoid text hardcoding
-                view?.showError("There was a problem. Try later")
+                view?.showError(context.getString(R.string.error_network))
                 view?.showLoading(false)
             }
         })
@@ -41,14 +42,14 @@ constructor() : MainContract.Presenter {
 
     override fun onItemSelected(id: String) {
         view?.showLoading(true)
-        movieDetail.run(id, object : GetMovieDetail.Callback {
+        getMovieDetail.run(id, object : GetMovieDetail.Callback {
             override fun onSuccess(movie: Movie) {
                 view?.showLoading(false)
                 view?.startItemDetailActivity(movie)
             }
 
             override fun onError(throwable: Throwable) {
-                view?.showError("There was a problem. Try later")
+                view?.showError(context.getString(R.string.error_network))
                 view?.showLoading(false)
             }
         })
