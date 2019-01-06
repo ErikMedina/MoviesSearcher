@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.erikmedina.movies.R
 
-class ItemAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class MovieAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(movie: Movie)

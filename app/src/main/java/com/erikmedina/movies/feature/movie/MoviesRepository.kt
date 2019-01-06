@@ -31,7 +31,7 @@ interface MoviesRepository {
             call.enqueue(object : retrofit2.Callback<SearchResponse> {
                 override fun onResponse(call: Call<SearchResponse>?, response: Response<SearchResponse>) {
                     if (response.isSuccessful) {
-                        callback.onSuccess(Mapper.mapMovies(response.body()))
+                        callback.onSuccess(MoviesMapper.mapMovies(response.body()))
                     }
                 }
 
@@ -47,7 +47,7 @@ interface MoviesRepository {
             call.enqueue(object : retrofit2.Callback<Search> {
                 override fun onResponse(call: Call<Search>?, response: Response<Search>) {
                     if (response.isSuccessful) {
-                        callback.onSuccess(Mapper.mapMovie(response.body()))
+                        callback.onSuccess(MoviesMapper.mapMovie(response.body()))
                     }
                 }
 

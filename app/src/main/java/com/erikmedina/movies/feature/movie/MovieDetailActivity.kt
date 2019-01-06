@@ -6,7 +6,7 @@ import com.erikmedina.movies.core.platform.BaseActivity
 import com.erikmedina.movies.core.util.Constant
 import kotlinx.android.synthetic.main.activity_item_detail.*
 
-class ItemDetailActivity : BaseActivity() {
+class MovieDetailActivity : BaseActivity() {
 
     private lateinit var movie: Movie
 

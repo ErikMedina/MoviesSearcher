@@ -2,7 +2,7 @@ package com.erikmedina.movies.feature.movie
 
 import com.erikmedina.movies.core.util.Constant
 
-object Mapper {
+object MoviesMapper {
 
     fun mapMovies(searchResponse: SearchResponse): List<Movie> {
         val movies = searchResponse.movies

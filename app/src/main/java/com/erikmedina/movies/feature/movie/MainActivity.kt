@@ -23,7 +23,7 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     private lateinit var context: Context
 
-    private lateinit var adapter: ItemAdapter
+    private lateinit var adapter: MovieAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -36,7 +36,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun getLayoutId() = R.layout.activity_main
 
     private fun initializeRecycler() {
-        adapter = ItemAdapter(object : ItemAdapter.OnItemClickListener {
+        adapter = MovieAdapter(object : MovieAdapter.OnItemClickListener {
             override fun onItemClick(movie: Movie) {
                 Log.i(TAG, "[onItemClick] item selected: ${movie.title}")
                 presenter.onItemSelected(movie.id)
@@ -74,7 +74,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun startItemDetailActivity(movie: Movie) {
-        val intent = Intent(context, ItemDetailActivity::class.java)
+        val intent = Intent(context, MovieDetailActivity::class.java)
         intent.putExtra(Constant.EXTRA_ITEM, movie)
         startActivity(intent)
     }
