@@ -1,4 +1,4 @@
-package com.erikmedina.movies.presentation.itemdetail
+package com.erikmedina.movies.feature.movie
 
 import android.os.Bundle
 import com.erikmedina.movies.R

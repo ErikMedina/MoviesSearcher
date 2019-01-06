@@ -1,4 +1,4 @@
-package com.erikmedina.movies.presentation.main.adapter
+package com.erikmedina.movies.feature.movie
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

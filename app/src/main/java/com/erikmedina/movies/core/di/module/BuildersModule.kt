@@ -1,6 +1,6 @@
 package com.erikmedina.movies.core.di.module
 
-import com.erikmedina.movies.presentation.main.MainActivity
+import com.erikmedina.movies.feature.movie.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

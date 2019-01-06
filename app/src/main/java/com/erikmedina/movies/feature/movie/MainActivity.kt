@@ -1,4 +1,4 @@
-package com.erikmedina.movies.presentation.main
+package com.erikmedina.movies.feature.movie
 
 import android.content.Context
 import android.content.Intent
@@ -12,8 +12,6 @@ import android.view.View
 import com.erikmedina.movies.R
 import com.erikmedina.movies.core.platform.BaseActivity
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.presentation.itemdetail.ItemDetailActivity
-import com.erikmedina.movies.presentation.main.adapter.ItemAdapter
 import com.erikmedina.movies.util.Constant
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*

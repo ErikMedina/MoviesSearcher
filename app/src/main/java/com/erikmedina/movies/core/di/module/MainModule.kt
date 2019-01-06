@@ -4,8 +4,8 @@ import com.erikmedina.movies.domain.interactor.GetContentInteractor
 import com.erikmedina.movies.domain.interactor.GetContentInteractorImpl
 import com.erikmedina.movies.domain.interactor.GetContentListInteractor
 import com.erikmedina.movies.domain.interactor.GetContentListInteractorImpl
-import com.erikmedina.movies.presentation.main.MainContract
-import com.erikmedina.movies.presentation.main.MainPresenter
+import com.erikmedina.movies.feature.movie.MainContract
+import com.erikmedina.movies.feature.movie.MainPresenter
 import dagger.Module
 import dagger.Provides
 
