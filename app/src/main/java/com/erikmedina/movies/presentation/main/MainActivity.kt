@@ -7,15 +7,13 @@ import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
-import com.erikmedina.movies.MyApplication
 import com.erikmedina.movies.R
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.core.di.component.DaggerMainComponent
-import com.erikmedina.movies.core.di.module.MainModule
 import com.erikmedina.movies.presentation.BaseActivity
 import com.erikmedina.movies.presentation.itemdetail.ItemDetailActivity
 import com.erikmedina.movies.presentation.main.adapter.ItemAdapter
 import com.erikmedina.movies.util.Constant
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -29,6 +27,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     private lateinit var adapter: ItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         context = this
         initializeRecycler()
@@ -45,14 +44,6 @@ class MainActivity : BaseActivity(), MainContract.View {
         })
         recycler.adapter = adapter
         recycler.layoutManager = LinearLayoutManager(this)
-    }
-
-    override fun initializeDependencyInjector() {
-        val component = DaggerMainComponent.builder()
-                .myApplicationComponent((application as MyApplication).getComponent())
-                .mainModule(MainModule())
-                .build()
-        component.inject(this)
     }
 
     override fun onResume() {

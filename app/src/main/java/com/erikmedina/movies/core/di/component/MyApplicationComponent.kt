@@ -1,27 +1,24 @@
 package com.erikmedina.movies.core.di.component
 
-import android.content.Context
 import com.erikmedina.movies.MyApplication
-import com.erikmedina.movies.core.rest.ApiRest
+import com.erikmedina.movies.core.di.module.BuildersModule
 import com.erikmedina.movies.core.di.module.MyApplicationModule
-import com.erikmedina.movies.core.di.qualifier.MyApplicationContext
-import com.erikmedina.movies.domain.repository.Repository
+import dagger.BindsInstance
 import dagger.Component
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [(MyApplicationModule::class)])
+@Component(modules = [AndroidSupportInjectionModule::class, MyApplicationModule::class, BuildersModule::class])
 interface MyApplicationComponent {
 
-    @get:MyApplicationContext
-    val context: Context
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(application: MyApplication): Builder
 
-    val myApplication: MyApplication
-
-    val repository: Repository
-
-    val apiRest: ApiRest
+        fun build(): MyApplicationComponent
+    }
 
     fun inject(myApplication: MyApplication)
-
 }

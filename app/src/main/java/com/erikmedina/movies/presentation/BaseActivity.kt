@@ -8,10 +8,7 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
-        initializeDependencyInjector()
     }
 
     abstract fun getLayoutId(): Int
-
-    protected abstract fun initializeDependencyInjector()
 }

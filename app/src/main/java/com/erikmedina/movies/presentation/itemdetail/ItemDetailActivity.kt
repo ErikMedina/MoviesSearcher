@@ -25,8 +25,4 @@ class ItemDetailActivity : BaseActivity() {
     }
 
     override fun getLayoutId() = R.layout.activity_item_detail
-
-    override fun initializeDependencyInjector() {
-        //TODO: we have to create the Dagger module for this activity so we can inject the presenter, interactors,...
-    }
 }

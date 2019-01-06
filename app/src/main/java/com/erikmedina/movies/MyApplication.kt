@@ -1,30 +1,30 @@
 package com.erikmedina.movies
 
+import android.app.Activity
 import android.app.Application
-import android.content.Context
 import com.erikmedina.movies.core.di.component.DaggerMyApplicationComponent
-import com.erikmedina.movies.core.di.component.MyApplicationComponent
-import com.erikmedina.movies.core.di.module.MyApplicationModule
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
+import javax.inject.Inject
 
-class MyApplication : Application() {
+class MyApplication : Application(), HasActivityInjector {
 
-    private val applicationComponent by lazy {
-        DaggerMyApplicationComponent
-                .builder()
-                .myApplicationModule(MyApplicationModule(this))
-                .build()
-    }
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     override fun onCreate() {
         super.onCreate()
-        applicationComponent.inject(this)
+
+        DaggerMyApplicationComponent
+                .builder()
+                .application(this)
+                .build()
+                .inject(this)
+
     }
 
-    fun getComponent(): MyApplicationComponent {
-        return applicationComponent
-    }
-
-    companion object {
-        fun get(context: Context): MyApplication = context.applicationContext as MyApplication
+    override fun activityInjector(): AndroidInjector<Activity> {
+        return dispatchingAndroidInjector
     }
 }

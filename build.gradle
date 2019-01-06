@@ -18,7 +18,6 @@ buildscript {
 ext {
     supportLibraryVersion = '27.1.1'
     constraintLayoutVersion = '1.1.2'
-    daggerVersion = '2.11'
     retrofitVersion = '2.2.0'
     loggingInterceptorVersion = '3.9.1'
     gsonVersion = '2.8.1'
