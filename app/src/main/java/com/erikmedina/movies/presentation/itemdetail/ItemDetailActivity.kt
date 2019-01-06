@@ -2,8 +2,8 @@ package com.erikmedina.movies.presentation.itemdetail
 
 import android.os.Bundle
 import com.erikmedina.movies.R
+import com.erikmedina.movies.core.platform.BaseActivity
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.presentation.BaseActivity
 import com.erikmedina.movies.util.Constant
 import kotlinx.android.synthetic.main.activity_item_detail.*
 

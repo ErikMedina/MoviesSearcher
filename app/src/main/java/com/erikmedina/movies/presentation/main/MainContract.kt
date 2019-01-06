@@ -1,8 +1,8 @@
 package com.erikmedina.movies.presentation.main
 
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.presentation.BasePresenter
-import com.erikmedina.movies.presentation.BaseView
+import com.erikmedina.movies.core.platform.BasePresenter
+import com.erikmedina.movies.core.platform.BaseView
 
 /**
  * This interface specifies the contract between the view and the presenter.

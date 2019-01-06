@@ -1,4 +1,4 @@
-package com.erikmedina.movies.presentation
+package com.erikmedina.movies.core.platform
 
 interface BaseView<T> {
 

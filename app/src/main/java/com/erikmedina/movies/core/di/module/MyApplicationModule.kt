@@ -19,8 +19,8 @@ class MyApplicationModule {
     }
 
     @Provides
-    fun provideRepository(apiRest: ApiRest): Repository {
-        return RepositoryImpl(apiRest)
+    fun provideRepository(repository: RepositoryImpl): Repository {
+        return repository
     }
 
     @Singleton

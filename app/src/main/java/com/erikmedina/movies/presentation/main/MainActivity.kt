@@ -9,7 +9,7 @@ import android.util.Log
 import android.view.View
 import com.erikmedina.movies.R
 import com.erikmedina.movies.data.local.model.Item
-import com.erikmedina.movies.presentation.BaseActivity
+import com.erikmedina.movies.core.platform.BaseActivity
 import com.erikmedina.movies.presentation.itemdetail.ItemDetailActivity
 import com.erikmedina.movies.presentation.main.adapter.ItemAdapter
 import com.erikmedina.movies.util.Constant

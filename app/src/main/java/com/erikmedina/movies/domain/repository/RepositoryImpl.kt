@@ -9,13 +9,16 @@ import com.erikmedina.movies.util.Mapper
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
  * The repository will be responsible for transforming the data for the input and output of information.
  */
 @Singleton
-class RepositoryImpl constructor(private val apiRest: ApiRest) : Repository {
+class RepositoryImpl
+@Inject
+constructor(private val apiRest: ApiRest) : Repository {
 
     override fun getContentList(title: String, callback: Repository.Callback<List<Item>>) {
         Log.i(TAG, "[getContentList]")
